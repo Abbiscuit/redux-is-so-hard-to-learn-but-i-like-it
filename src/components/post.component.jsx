@@ -12,7 +12,7 @@ class Post extends Component {
       <section className="posts">
         <ul>
           {this.props.posts.map(post => (
-            <li key={post.id}> {post.name} </li>
+            <li key={post.id}> {post.title} </li>
           ))}
         </ul>
       </section>
