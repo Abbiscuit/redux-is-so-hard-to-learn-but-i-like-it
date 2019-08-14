@@ -11,6 +11,7 @@ const Counter = ({ articles }) => {
 };
 
 const mapStateToProps = state => {
+  console.log('counter-component', state);
   return {
     articles: state.articles.articles
   };

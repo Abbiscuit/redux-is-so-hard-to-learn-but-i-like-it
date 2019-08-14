@@ -11,7 +11,7 @@ const List = ({ articles }) => (
 );
 
 const mapStateToProps = state => {
-  console.log(state);
+  console.log('list-component', state);
   return {
     articles: state.articles.articles
   };
