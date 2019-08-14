@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import List from './components/list.component';
+
 class App extends Component {
   constructor() {
     super();
@@ -15,11 +17,8 @@ class App extends Component {
     const { articles } = this.state;
     return (
       <div>
-        <ul>
-          {articles.map(el => (
-            <li key={el.id}>{el.title}</li>
-          ))}
-        </ul>
+        <h2>Articles</h2>
+        <List articles={articles} />
       </div>
     );
   }
