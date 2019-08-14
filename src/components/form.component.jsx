@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import uuid from 'uuid';
+import { connect } from 'react-redux';
+import { addArticle } from '../redux/articles/articles.actions';
 
 class Form extends Component {
   constructor(props) {
@@ -15,9 +17,7 @@ class Form extends Component {
     e.preventDefault();
     const { title } = this.state;
     const id = uuid.v4();
-    // this.props.addArticle({ title: title, id: id });
-    console.log(title);
-    console.log(id);
+    this.props.addArticle({ id, title });
     this.setState({ title: '' });
   };
 
@@ -39,4 +39,13 @@ class Form extends Component {
   }
 }
 
-export default Form;
+const mapDispatchToProps = dispatch => {
+  return {
+    addArticle: article => dispatch(addArticle(article))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Form);
