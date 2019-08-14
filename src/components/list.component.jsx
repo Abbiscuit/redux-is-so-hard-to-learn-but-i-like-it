@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 const List = ({ articles }) => (
   <ul>
     {articles.map(el => (
@@ -8,4 +10,11 @@ const List = ({ articles }) => (
   </ul>
 );
 
-export default List;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    articles: state.articles.articles
+  };
+};
+
+export default connect(mapStateToProps)(List);
